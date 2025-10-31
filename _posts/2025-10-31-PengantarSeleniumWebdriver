@@ -1,0 +1,217 @@
+---
+title: "Pengantar Selenium WebDriver"
+date: 2025-10-31 15:30:00 +0800
+categories: [SoftwareTesting]
+tags: [Selenium, WebDriver, AutomationTesting, QA, Python, SDLC]
+---
+
+## Pengantar
+
+Dalam dunia pengujian perangkat lunak modern, terutama untuk aplikasi berbasis web, **automation testing** menjadi kebutuhan penting.  
+Salah satu alat (tool) paling populer yang digunakan untuk otomatisasi pengujian adalah **Selenium WebDriver**.
+
+Selenium memungkinkan penguji (tester) menjalankan interaksi otomatis terhadap browser — seperti mengetik teks, menekan tombol, memverifikasi hasil, hingga menjalankan seluruh skenario pengujian tanpa campur tangan manual.
+
+---
+
+## Apa Itu Selenium?
+
+**Selenium** adalah framework **open-source** untuk otomatisasi pengujian pada browser web.  
+Dengan Selenium, kita dapat menulis skrip yang meniru perilaku pengguna — seperti login, mengisi form, klik tombol, dan navigasi halaman — untuk memastikan semua fungsi berjalan dengan benar.
+
+### 🔹 Karakteristik Selenium:
+- Gratis dan bersifat **open-source**.  
+- Mendukung berbagai **bahasa pemrograman** seperti Python, Java, C#, dan JavaScript.  
+- Mendukung banyak **browser**: Chrome, Firefox, Edge, Safari, dan Opera.  
+- Bisa dijalankan di berbagai **sistem operasi** seperti Windows, macOS, dan Linux.  
+- Memiliki **komunitas besar** dan dokumentasi lengkap yang memudahkan pembelajaran.
+
+---
+
+## Apa Itu Selenium WebDriver?
+
+**WebDriver** adalah **komponen inti dari Selenium** yang berfungsi sebagai penghubung antara kode program dan browser.
+
+### 🔸 Fungsi Utama WebDriver:
+- Mengontrol browser (membuka halaman, klik, input teks, dan navigasi).  
+- Melakukan validasi terhadap elemen-elemen HTML.  
+- Menjalankan aksi seperti pengguna sungguhan (misalnya login, submit form, scroll, dan lain-lain).  
+- Berinteraksi langsung dengan browser menggunakan **driver spesifik**, misalnya:
+  - `chromedriver` untuk Google Chrome.  
+  - `geckodriver` untuk Mozilla Firefox.  
+
+> Dengan WebDriver, kita bisa menguji aplikasi web dari sudut pandang pengguna secara otomatis.
+
+---
+
+## Kenapa Harus Menggunakan Selenium?
+
+Beberapa alasan utama mengapa Selenium menjadi pilihan populer di kalangan tester dan developer adalah:
+
+1. **Open-source dan Gratis**  
+   Tidak membutuhkan lisensi berbayar sehingga cocok untuk proyek akademik maupun industri.
+
+2. **Mendukung Banyak Bahasa Pemrograman**  
+   Selenium dapat digunakan dengan Python, Java, C#, JavaScript, Ruby, dan PHP.
+
+3. **Multi-Platform**  
+   Dapat berjalan di berbagai sistem operasi — baik Windows, macOS, maupun Linux.
+
+4. **Kompatibel dengan Banyak Browser**  
+   Selenium mampu menjalankan pengujian lintas browser (cross-browser testing) untuk memastikan tampilan dan fungsionalitas aplikasi konsisten.
+
+5. **Integrasi dengan Framework Testing**  
+   Dapat diintegrasikan dengan framework seperti **Pytest**, **JUnit**, **TestNG**, atau **NUnit** untuk menghasilkan laporan otomatis.
+
+6. **Komunitas dan Dokumentasi Besar**  
+   Mendukung pembelajaran dan pemecahan masalah dengan cepat karena banyak sumber daya tersedia secara online.
+
+---
+
+## Instalasi Selenium dengan Python
+
+Sebelum menggunakan Selenium, pastikan Python sudah terpasang di komputer.  
+Kemudian lakukan instalasi Selenium dengan perintah berikut di terminal atau command prompt:
+
+```bash
+pip install selenium
+````
+
+Selanjutnya, unduh **WebDriver** yang sesuai dengan browser yang akan digunakan, misalnya **ChromeDriver** dari situs resmi Google Chrome.
+
+> Simpan file `chromedriver.exe` di folder proyek atau lokasi yang dikenali oleh sistem.
+
+---
+
+## Membuka Browser dengan Selenium
+
+Berikut contoh sederhana membuka browser Chrome dan menavigasi ke situs menggunakan Selenium:
+
+```python
+from selenium import webdriver
+
+# Membuka browser Chrome
+driver = webdriver.Chrome()
+
+# Membuka halaman web
+driver.get("https://www.google.com")
+
+# Menutup browser
+driver.quit()
+```
+
+Kode ini akan secara otomatis membuka browser Chrome, menavigasi ke halaman Google, lalu menutup browser setelah selesai.
+
+---
+
+## Interaksi dengan Elemen HTML
+
+Selenium memungkinkan kita berinteraksi dengan elemen-elemen pada halaman web menggunakan berbagai metode seperti:
+
+* `find_element_by_id()`
+* `find_element_by_name()`
+* `find_element_by_xpath()`
+* `find_element_by_css_selector()`
+
+Berikut contoh skrip login sederhana:
+
+```python
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+driver = webdriver.Chrome()
+driver.get("https://www.saucedemo.com/")
+
+# Input username dan password
+driver.find_element(By.ID, "user-name").send_keys("standard_user")
+driver.find_element(By.ID, "password").send_keys("secret_sauce")
+
+# Klik tombol login
+driver.find_element(By.ID, "login-button").click()
+```
+
+Skrip di atas akan:
+
+1. Membuka situs SauceDemo.
+2. Mengisi username dan password.
+3. Menekan tombol login secara otomatis.
+
+---
+
+## Live Coding (Contoh Implementasi)
+
+Dalam demo pengujian otomatis menggunakan Selenium, biasanya ditampilkan contoh skenario seperti berikut:
+
+* **Membuka browser Chrome**.
+* **Melakukan login otomatis di situs web**.
+* **Menambahkan produk ke keranjang**.
+* **Memverifikasi hasil pengujian (misalnya pesan sukses atau jumlah item di keranjang).**
+
+Contoh ini menunjukkan bagaimana Selenium dapat digunakan untuk melakukan pengujian fungsional secara otomatis dan berulang dengan hasil yang konsisten.
+
+---
+
+## Test Scenario
+
+Berikut contoh skenario pengujian (*Test Scenario*) menggunakan Selenium WebDriver:
+
+| ID Scenario | Deskripsi                           | Tujuan                                 |
+| ----------- | ----------------------------------- | -------------------------------------- |
+| **TS-001**  | Login berhasil di halaman SauceDemo | Memastikan login valid berhasil        |
+| **TS-002**  | Login gagal dengan kredensial salah | Memastikan pesan error muncul          |
+| **TS-003**  | Menambahkan produk ke keranjang     | Memastikan produk berhasil ditambahkan |
+
+---
+
+## Test Case
+
+Berdasarkan test scenario di atas, berikut beberapa contoh test case:
+
+| ID         | Deskripsi             | Steps                                                                        | Expected Result                          |
+| ---------- | --------------------- | ---------------------------------------------------------------------------- | ---------------------------------------- |
+| **TC-001** | Login sukses          | Masukkan username `standard_user` dan password `secret_sauce` → Klik *Login* | Masuk ke halaman *Inventory*             |
+| **TC-002** | Login gagal           | Masukkan username salah → Klik *Login*                                       | Muncul pesan error “Invalid credentials” |
+| **TC-003** | Tambah produk ke cart | Login berhasil → Klik tombol “Add to cart”                                   | Jumlah item di cart bertambah 1          |
+
+**Deskripsi Tambahan:**
+
+* **TC-001** menguji apakah pengguna dengan kredensial yang benar dapat masuk ke sistem.
+* **TC-002** memastikan sistem mampu menolak kredensial salah dengan pesan yang jelas.
+* **TC-003** memverifikasi fungsi tombol "Add to cart" berjalan sebagaimana mestinya.
+
+---
+
+## Keunggulan Selenium dibanding Tools Lain
+
+| Aspek               | Selenium                       | Tool Lain            |
+| ------------------- | ------------------------------ | -------------------- |
+| Lisensi             | Gratis & Open-source           | Beberapa berbayar    |
+| Bahasa Pemrograman  | Banyak (Python, Java, JS, C#)  | Terbatas             |
+| Dukungan Browser    | Semua browser utama            | Tidak selalu lengkap |
+| Integrasi Framework | Pytest, JUnit, TestNG, Jenkins | Kadang terbatas      |
+| Komunitas           | Sangat besar                   | Terbatas             |
+
+Dengan fleksibilitas tinggi dan ekosistem luas, Selenium tetap menjadi pilihan utama untuk pengujian otomatis berbasis web.
+
+---
+
+## Kesimpulan
+
+**Selenium WebDriver** merupakan alat yang sangat efektif untuk melakukan pengujian otomatis pada aplikasi web.
+Dengan dukungan lintas bahasa, lintas platform, dan integrasi framework testing modern, Selenium membantu pengembang dan QA memastikan kualitas aplikasi lebih cepat dan efisien.
+
+Melalui penerapan Selenium:
+
+* Proses pengujian menjadi **lebih cepat dan akurat**.
+* Risiko kesalahan manusia dapat **diminimalkan**.
+* Regressions test dapat dilakukan **berulang tanpa biaya tambahan**.
+
+Selenium menjadi fondasi utama dalam dunia **Automation Testing**, dan penguasaan terhadap tool ini merupakan keterampilan penting bagi penguji perangkat lunak profesional.
+
+---
+
+*Disusun oleh:*
+**Kelompok 7 Sistem Informasi 2023 – Universitas Hasanuddin**
+Fitriani Jaya, Muhammad Qaffal Al Fifaiz, Muslih Khairu Alief Rahman, Diza Sazkia,
+Arelio Junara Palinoan, Ivan Betrandi, Sheryl Anastasya Palambang,
+Novi Rezkiyah Azzahrah Ramadhani, Wahyu Rusman.
