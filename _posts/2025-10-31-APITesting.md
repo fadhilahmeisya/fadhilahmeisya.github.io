@@ -214,3 +214,9 @@ Tools seperti Postman dan SOAPUI membantu mempercepat proses pengujian dengan fi
 Melalui API Testing yang sistematis, kualitas aplikasi secara keseluruhan akan meningkat, dan pengalaman pengguna menjadi lebih baik.
 
 ---
+
+*Disusun oleh:*
+**Kelompok 6 Sistem Informasi 2023 – Universitas Hasanuddin**
+Frisilia Kiki, Indy Sekar Ayu, Musliati, Nayla Zahra Adelia,
+Muhammad Rifky Kurniawan, Muhammad Dirga Dian Nugraha,
+Mohammad Abdul Razaq, Nur Wahida.
