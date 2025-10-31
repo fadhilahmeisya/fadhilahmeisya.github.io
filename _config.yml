@@ -1,5 +1,6 @@
 # The Site Configuration
-
+author:
+  avatar: /assets/img/pp.jpg
 # Import the theme
 theme: jekyll-theme-chirpy
 
