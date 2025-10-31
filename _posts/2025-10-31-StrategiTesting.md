@@ -1,6 +1,6 @@
 ---
 title: "Strategi Testing"
-date: 2025-07-06 00:00:00 +0800
+date: 2025-10-31 10:10:00 +0800
 categories: [SoftwareTesting]
 tags: [SDLC, SoftwareTesting, Black-BoxTesting, End-to-EndTesting]
 ---
