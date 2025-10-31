@@ -1,6 +1,5 @@
 # The Site Configuration
-author:
-  avatar: /assets/img/pp.jpg
+
 # Import the theme
 theme: jekyll-theme-chirpy
 
@@ -14,6 +13,9 @@ timezone:
 
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
+author:
+  avatar: /assets/img/pp.jpg
+  name: mei
 
 title: Fadhilah Meisya Az Zahrah # the main title
 
